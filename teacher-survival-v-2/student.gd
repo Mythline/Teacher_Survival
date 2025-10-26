@@ -13,7 +13,7 @@ var can_shred = true
 func _ready():
 	# Remember where we started
 	start_x = position.x
-	# NEW CODE: Connect the area's signal to detect when player enters
+	# Connect the area's signal to detect when player enters
 	$Area2D.body_entered.connect(_on_player_entered)
 
 func _physics_process(delta):
@@ -32,20 +32,19 @@ func _physics_process(delta):
 	# Actually move the student
 	move_and_slide()
 
-# NEW FUNCTION: Add this completely new function at the bottom
 func _on_player_entered(body):
 	# Check if it's the player and if we can shred
 	if body.name == "Player" and can_shred:
 		shred_shirt(body)
 
-# NEW FUNCTION: Add this completely new function at the bottom
 func shred_shirt(player):
 	# Prevent multiple rapid shreddings
 	can_shred = false
 	
-	# TODO: Make the player lose money here!
-	print("SHREDDED! Student tore your shirt! -$50")
+	# Use the global SignalBus
+	SignalBus.shirt_shredded.emit("Student tore your shirt! -$50")
+	print("Student emitted shred signal")
 	
-	# Optional: Add a cooldown so it doesn't shred every frame
+	# Cooldown before can shred again
 	await get_tree().create_timer(1.0).timeout
 	can_shred = true

@@ -14,3 +14,7 @@ config/name="Teacher Survival V2"
 run/main_scene="uid://dygcbl2vwpjqw"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SignalBus="*res://signal_bus.gd"
