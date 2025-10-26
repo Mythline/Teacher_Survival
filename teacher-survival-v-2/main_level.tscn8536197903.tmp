@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://dygcbl2vwpjqw"]
+
+[ext_resource type="PackedScene" uid="uid://cbg0we7jgpij" path="res://player.tscn" id="1_6614m"]
+[ext_resource type="Texture2D" uid="uid://dn77fh2yyplrv" path="res://icon.svg" id="2_bhu08"]
+[ext_resource type="PackedScene" uid="uid://dxf8uyibvmik2" path="res://student.tscn" id="3_bhu08"]
+[ext_resource type="Script" uid="uid://d04xkup481evq" path="res://ui.gd" id="4_05as6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05as6"]
+size = Vector2(516, 30)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_6614m")]
+position = Vector2(228, 423)
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(334, 509.5)
+shape = SubResource("RectangleShape2D_05as6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground"]
+position = Vector2(334, 506.25)
+scale = Vector2(4.109375, 0.2695314)
+texture = ExtResource("2_bhu08")
+
+[node name="Ground2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground2"]
+position = Vector2(1003, 433.24997)
+shape = SubResource("RectangleShape2D_05as6")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground2"]
+position = Vector2(1007, 434.25)
+scale = Vector2(4.109375, 0.2695314)
+texture = ExtResource("2_bhu08")
+
+[node name="student" parent="." instance=ExtResource("3_bhu08")]
+position = Vector2(923, 358)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -22.0
+offset_top = 132.0
+offset_right = 418.0
+offset_bottom = 219.0
+script = ExtResource("4_05as6")
+
+[node name="ShredMessage" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 10.0
+offset_right = 633.0
+offset_bottom = 102.0
+theme_override_colors/font_color = Color(1, 0.08235294, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "\"\""
+horizontal_alignment = 1
