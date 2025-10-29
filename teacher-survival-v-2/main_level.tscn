@@ -4,16 +4,15 @@
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_bw3m6"]
 
-[node name="Node2D" type="Node2D"]
+[node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_6614m")]
-position = Vector2(31, -50)
+position = Vector2(3, -65)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position_smoothing_enabled = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_bw3m6")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(47, -43)
-zoom = Vector2(2, 2)

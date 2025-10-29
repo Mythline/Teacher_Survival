@@ -1,15 +1,15 @@
 [gd_scene load_steps=7 format=3 uid="uid://cbg0we7jgpij"]
 
-[ext_resource type="Script" uid="uid://c081k4wwjt30p" path="res://character_body_2d.gd" id="1_onrkg"]
+[ext_resource type="Script" uid="uid://cyr4crdgmh8nx" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://dx34wkfiuqmd4" path="res://Assets/Blink Sprite teacher.png" id="2_onrkg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_i3pqv"]
 atlas = ExtResource("2_onrkg")
-region = Rect2(0, 0, 89, 94)
+region = Rect2(2, 0, 89, 93)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hqtel"]
 atlas = ExtResource("2_onrkg")
-region = Rect2(89, 0, 89, 94)
+region = Rect2(91, 0, 89, 93)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sweqy"]
 animations = [{
@@ -25,21 +25,16 @@ animations = [{
 "speed": 0.5
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
-size = Vector2(15, 85)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hs0m"]
+size = Vector2(15, 88)
 
-[node name="Player" type="Node2D"]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_onrkg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
-position = Vector2(0, -2)
-scale = Vector2(1, 1.0047733)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sweqy")
-autoplay = "default"
-frame_progress = 0.68535006
+frame_progress = 0.1480664
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(1.5, -0.5)
-shape = SubResource("RectangleShape2D_hqtel")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_2hs0m")
