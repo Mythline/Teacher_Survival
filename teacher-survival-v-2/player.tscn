@@ -33,7 +33,8 @@ script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sweqy")
-frame_progress = 0.1480664
+autoplay = "default"
+frame_progress = 0.6008957
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
