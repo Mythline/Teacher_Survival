@@ -1,11 +1,52 @@
-[gd_scene load_steps=2 format=3 uid="uid://dygcbl2vwpjqw"]
+[gd_scene load_steps=5 format=3 uid="uid://dygcbl2vwpjqw"]
 
 [ext_resource type="PackedScene" uid="uid://cbg0we7jgpij" path="res://player.tscn" id="1_6614m"]
+[ext_resource type="Texture2D" uid="uid://bbq7hwtpc5t0d" path="res://Assets/School Tiles V3.png" id="2_6614m"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bhu08"]
+texture = ExtResource("2_6614m")
+1:0/size_in_atlas = Vector2i(4, 4)
+1:0/0 = 0
+6:5/size_in_atlas = Vector2i(4, 4)
+6:5/0 = 0
+16:9/size_in_atlas = Vector2i(2, 1)
+16:9/0 = 0
+16:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16.244087, -8.020519, 16.142561, -7.8174667, 15.93951, 7.918993, -16.142563, 8.020517, -16.041037, 0.20305061)
+20:9/size_in_atlas = Vector2i(4, 1)
+20:9/0 = 0
+20:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32.19471, -8.273502, 31.834995, -7.7339253, 31.863075, 7.6471386, -31.834993, 7.913784, -31.834993, 1.0791512)
+12:5/size_in_atlas = Vector2i(2, 8)
+12:5/0 = 0
+0:5/size_in_atlas = Vector2i(2, 4)
+0:5/0 = 0
+3:7/size_in_atlas = Vector2i(2, 2)
+3:7/0 = 0
+7:0/size_in_atlas = Vector2i(4, 4)
+7:0/0 = 0
+13:0/size_in_atlas = Vector2i(8, 4)
+13:0/0 = 0
+22:0/size_in_atlas = Vector2i(4, 8)
+22:0/0 = 0
+27:0/size_in_atlas = Vector2i(4, 8)
+27:0/0 = 0
+33:0/size_in_atlas = Vector2i(8, 6)
+33:0/0 = 0
+28:9/size_in_atlas = Vector2i(8, 1)
+28:9/0 = 0
+28:9/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64.0022, -8.025382, 63.965675, -8.007122, 64.02971, 8.2735, -64.02971, 8.093643, -63.84985, 1.0791531)
+
+[sub_resource type="TileSet" id="TileSet_05as6"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_bhu08")
 
 [node name="World" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_6614m")]
-position = Vector2(3, -65)
+position = Vector2(-1, -49)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position_smoothing_enabled = true
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray(0, 0, 4, 0, 0, 0, 0, 0, 28, 0, 9, 0, 0, 0, 252, 255, 0, 0, 0, 0, 28, 0, 9, 0, 0, 0, 244, 255, 0, 0, 0, 0, 28, 0, 9, 0, 0, 0, 12, 0, 0, 0, 0, 0, 28, 0, 9, 0, 0, 0)
+tile_set = SubResource("TileSet_05as6")
