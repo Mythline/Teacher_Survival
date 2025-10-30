@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dygcbl2vwpjqw"]
 
 [ext_resource type="PackedScene" uid="uid://cbg0we7jgpij" path="res://player.tscn" id="1_6614m"]
-[ext_resource type="Texture2D" uid="uid://bbq7hwtpc5t0d" path="res://Assets/School Tiles V3.png" id="2_6614m"]
+[ext_resource type="Texture2D" uid="uid://douj5a0vkimnw" path="res://Assets/School Tiles V3.png" id="2_6614m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bhu08"]
 texture = ExtResource("2_6614m")
@@ -48,5 +48,6 @@ position = Vector2(-1, -49)
 position_smoothing_enabled = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = -1
 tile_map_data = PackedByteArray(0, 0, 4, 0, 0, 0, 0, 0, 28, 0, 9, 0, 0, 0, 252, 255, 0, 0, 0, 0, 28, 0, 9, 0, 0, 0, 244, 255, 0, 0, 0, 0, 28, 0, 9, 0, 0, 0, 12, 0, 0, 0, 0, 0, 28, 0, 9, 0, 0, 0)
 tile_set = SubResource("TileSet_05as6")
