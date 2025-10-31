@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dygcbl2vwpjqw"]
+[gd_scene load_steps=6 format=4 uid="uid://dygcbl2vwpjqw"]
 
 [ext_resource type="PackedScene" uid="uid://cbg0we7jgpij" path="res://player.tscn" id="1_6614m"]
 [ext_resource type="Texture2D" uid="uid://bbq7hwtpc5t0d" path="res://Assets/School Tiles V3.png" id="2_6614m"]
+[ext_resource type="Texture2D" uid="uid://b481wu4ekaab0" path="res://Assets/Test Background.png" id="3_bhu08"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bhu08"]
 texture = ExtResource("2_6614m")
@@ -49,5 +50,14 @@ position_smoothing_enabled = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 z_index = -1
-tile_map_data = PackedByteArray(0, 0, 4, 0, 0, 0, 0, 0, 28, 0, 9, 0, 0, 0, 252, 255, 0, 0, 0, 0, 28, 0, 9, 0, 0, 0, 244, 255, 0, 0, 0, 0, 28, 0, 9, 0, 0, 0, 12, 0, 0, 0, 0, 0, 28, 0, 9, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAEAAAAAAAcAAkAAAD8/wAAAAAcAAkAAAD0/wAAAAAcAAkAAAAMAAAAAAAcAAkAAAAUAAAAAAAcAAkAAAAcAAAAAAAcAAkAAAAkAAAAAAAcAAkAAAAsAAAAAAAcAAkAAAA0AAAAAAAcAAkAAAA8AAAAAAAcAAkAAABEAAAAAAAcAAkAAABMAAAAAAAcAAkAAAD///z/AAAbAAAAAAAgAPz/AAAMAAUAAAAVAP3/AAAhAAAAAAAzAP3/AAAhAAAAAAA=")
 tile_set = SubResource("TileSet_05as6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = -99
+offset_left = -249.0
+offset_top = -261.0
+offset_right = 1357.0
+offset_bottom = 14.0
+texture = ExtResource("3_bhu08")
+expand_mode = 1
